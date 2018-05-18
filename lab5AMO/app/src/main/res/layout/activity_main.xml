@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Метод Гауса з одиничними коефіцієнтами"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/kofs"
+        android:layout_marginTop="8dp"
+        android:text="Коефіцієнти рівняння"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="serif-monospace"/>
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/kofs"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TableRow
+            android:padding="8dp">
+
+            <TextView
+                android:text="a11"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a11"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a12"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a12"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a13"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a13"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="b1"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/b1"
+                android:layout_margin="8dp"/>
+        </TableRow>
+
+
+        <TableRow
+            android:padding="8dp">
+            <TextView
+                android:text="a21"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a21"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a22"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a22"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a23"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a23"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="b2"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/b2"
+                android:layout_margin="8dp"/>
+        </TableRow>
+
+        <TableRow
+            android:padding="8dp">
+            <TextView
+                android:text="a31"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a31"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a32"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a32"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="a33"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/a33"
+                android:layout_margin="8dp"/>
+            <TextView
+                android:text="b3"
+                android:layout_margin="8dp"/>
+            <EditText
+                android:id="@+id/b3"
+                android:layout_margin="8dp"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tv_results"
+        android:text="Корені рівняння"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/table"/>
+
+    <TableLayout
+        android:id="@+id/results"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/table"
+        app:layout_constraintTop_toBottomOf="@id/tv_results">
+
+        <TableRow
+            android:layout_margin="8dp">
+            <TextView
+                android:text="x1 = "/>
+            <TextView
+                android:id="@+id/tv_x1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_margin="8dp">
+            <TextView
+                android:text="x2 = "/>
+            <TextView
+                android:id="@+id/tv_x2"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_margin="8dp">
+            <TextView
+                android:text="x3 = "/>
+            <TextView
+                android:id="@+id/tv_x3"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btn_calc"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/results"/>
+
+
+</android.support.constraint.ConstraintLayout>

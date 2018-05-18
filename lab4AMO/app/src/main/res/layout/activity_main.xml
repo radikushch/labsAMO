@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context="com.labs.radik.lab4amo.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="Лінійне рівняння\nlg(x) - 1/(x^2) = 0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_variables"
+        android:text="Вхідні дані"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+    <EditText
+        android:id="@+id/et_value_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="20"
+        android:inputType="number|numberSigned|numberDecimal"
+        app:layout_constraintLeft_toRightOf="@id/tv_variables"
+        app:layout_constraintTop_toTopOf="@id/tv_variables" />
+
+    <TextView
+        android:id="@+id/tv_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Точність"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_variables"
+        app:layout_constraintTop_toBottomOf="@id/tv_variables" />
+
+    <TextView
+        android:id="@+id/tv_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Проміжок"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_divide"
+        app:layout_constraintTop_toBottomOf="@id/tv_divide" />
+
+    <EditText
+        android:id="@+id/et_left_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_interval"
+        app:layout_constraintLeft_toRightOf="@id/tv_interval"
+        app:layout_constraintTop_toTopOf="@id/tv_interval" />
+
+    <EditText
+        android:id="@+id/et_right_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_interval"
+        app:layout_constraintLeft_toRightOf="@id/et_left_num"
+        app:layout_constraintTop_toTopOf="@id/tv_interval" />
+
+    <Button
+        android:id="@+id/btn_newton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:text="Calculate"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:text="Результати"
+        android:id="@+id/tv_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@id/tv_interval"
+        app:layout_constraintTop_toBottomOf="@id/tv_interval"/>
+
+    <ScrollView
+        android:id="@+id/sv_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_newton"
+        app:layout_constraintLeft_toLeftOf="@id/tv_results"
+        app:layout_constraintTop_toBottomOf="@id/tv_results">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="serif-monospace"
+            android:textSize="16sp"/>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

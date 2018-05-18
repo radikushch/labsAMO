@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    tools:context="com.labs.radik.lab3amo.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="Інтерполяція функції\n y = e^cos(x)*cos(x^2)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_variables"
+        android:text="Значення змінних"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+    <TextView
+        android:text="x = "
+        android:id="@+id/tv_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_variables"/>
+
+    <EditText
+        android:id="@+id/et_value_x"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        app:layout_constraintLeft_toRightOf="@id/tv_x"
+        app:layout_constraintTop_toTopOf="@id/tv_variables"/>
+
+    <TextView
+        android:id="@+id/tv_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Розбиття"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_x"
+        app:layout_constraintTop_toBottomOf="@id/tv_x" />
+
+    <EditText
+        android:id="@+id/et_divide"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:ems="20"
+        app:layout_constraintLeft_toRightOf="@id/tv_divide"
+        app:layout_constraintTop_toTopOf="@id/tv_x"/>
+
+    <TextView
+        android:id="@+id/tv_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Проміжок"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_divide"
+        app:layout_constraintTop_toBottomOf="@id/tv_divide" />
+
+    <EditText
+        android:id="@+id/et_left_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_interval"
+        app:layout_constraintTop_toTopOf="@id/tv_interval"
+        app:layout_constraintBottom_toBottomOf="@id/tv_interval"
+        />
+    <EditText
+        android:id="@+id/et_right_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toRightOf="@id/et_left_num"
+        app:layout_constraintTop_toTopOf="@id/tv_interval"
+        app:layout_constraintBottom_toBottomOf="@id/tv_interval"/>
+    <Button
+        android:text="lagrange"
+        android:id="@+id/btn_lagrange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+        android:text="Newton"
+        android:id="@+id/btn_newton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintLeft_toRightOf="@id/btn_lagrange"
+        app:layout_constraintRight_toLeftOf="@id/btn_graph"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+        android:text="Graph"
+        android:id="@+id/btn_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <TextView
+        android:text="Результати"
+        android:id="@+id/tv_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="@id/tv_interval"
+        app:layout_constraintTop_toBottomOf="@id/tv_interval"/>
+    <TextView
+        android:text="y = "
+        android:id="@+id/tv_value_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_results"
+        app:layout_constraintTop_toBottomOf="@id/tv_results"/>
+    <TextView
+        android:text="Похибка "
+        android:id="@+id/tv_value_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_value_y"
+        app:layout_constraintTop_toBottomOf="@id/tv_value_y"/>
+    <TextView
+        android:text="Розмитість похибки"
+        android:id="@+id/tv_error_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_value_error"
+        app:layout_constraintTop_toBottomOf="@id/tv_value_error"/>
+</android.support.constraint.ConstraintLayout>
